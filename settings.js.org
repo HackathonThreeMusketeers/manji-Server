@@ -1,0 +1,6 @@
+exports.images_dir = __dirname + "/public/images/";
+exports.user = "aitalk"
+exports.password = ""
+exports.db = "aitalk"
+exports.host= "localhost"
+

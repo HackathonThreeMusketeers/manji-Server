@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 
 function insert(connection, res, value) {
   console.log(value);
-  var query = "insert into aitalk.diary (image, temp) values (?,?);";
+  var query = "insert into diary (image, temperature) values (?,?);";
   connection.query(query, value, function() {
     res.json({"name": "アップロードが完成しました。"});
   });
@@ -32,8 +32,11 @@ function entry_dialy(res, value) {
 
 router.post('/', function(req, res, next) {
   var form = new formidable.IncomingForm();
+  form.on('fileBegin', function(name, file) {
+    file.name = Math.random().toString(36).slice(-8) + ".png";
+    file.path = settings.images_dir + file.name;
+  });
   form.parse(req, function(err, fields, files) {
-    files.image.path = settings.images_dir + files.image.name
     var value = [
       files.image.name,
       fields.temperature

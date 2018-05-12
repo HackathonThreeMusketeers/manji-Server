@@ -4,7 +4,7 @@ var mysql = require('mysql');
 var settings = require('../settings');
 
 function select (res, connection) {
-  var query = 'select * from aitalk.dialy;';
+  var query = 'select * from aitalk.diary;';
   connection.query(query, function(err, rows) {
     res.json(rows);
   });

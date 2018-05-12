@@ -1,13 +1,10 @@
-module.exports = function(server) {
-  var io = require('socket.io')(server);
-
-  io.on('connection', function(socket) {
-    console.log('connected');
-    socket.on('message', function(msg) {
-    console.log('message: ' + msg);
-      io.emit("chat", stdout);
-    });
-  });
+var io = null;
+exports.io = function(server) {
+  console.log("connected");
+  io = require('socket.io')(server);
   return io;
 }
 
+exports.send = function() {
+  io.sockets.emit('message', 'hell');  
+}

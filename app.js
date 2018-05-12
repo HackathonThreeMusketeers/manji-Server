@@ -19,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', require('./routes/index'));
 app.use('/diary', require('./routes/diary'));
 app.use('/entry', require('./routes/entry'));
+app.use('/esa', require('./routes/esa'));
 app.use('/test', require('./routes/test'));
 
 // Error

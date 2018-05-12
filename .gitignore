@@ -1,4 +1,8 @@
 package-lock.json
+<<<<<<< HEAD
+=======
+settings.json
+>>>>>>> 3e11dcf55cb53406e219d56abc8858ebde3688b7
 node_modules/
 public/images
 !.keep

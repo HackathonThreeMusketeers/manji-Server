@@ -9,15 +9,14 @@ router.get('/', function(req, res, next) {
 });
 
 function insert(connection, res, value) {
-  console.log("hoge");
-  var query = "insert into aitalk.dialy (image, temp) values (?,?);";
+  console.log(value);
+  var query = "insert into aitalk.diary (image, temp) values (?,?);";
   connection.query(query, value, function() {
     res.json({"name": "アップロードが完成しました。"});
   });
 }
 
 function entry_dialy(res, value) {
-  console.log("hage");
   var options = {
     host: settings.host,
     user: settings.user,

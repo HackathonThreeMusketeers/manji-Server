@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routing
 app.use('/', require('./routes/index'));
-app.use('/dialy', require('./routes/dialy'));
+app.use('/diary', require('./routes/diary'));
 app.use('/entry', require('./routes/entry'));
 app.use('/test', require('./routes/test'));
 
